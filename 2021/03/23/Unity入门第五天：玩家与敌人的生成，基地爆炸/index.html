@@ -21,12 +21,12 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/en/","images":"/en/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+    var CONFIG = {"hostname":"yangocean-sudo.github.io","root":"/en/","images":"/en/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
 <meta name="description" content="本篇讲述了在游戏开始时的角色是如何生成的，以及基地爆炸动画的触发和设置">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity入门第五天：玩家与敌人的生成，基地爆炸动画">
-<meta property="og:url" content="http://example.com/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/index.html">
+<meta property="og:url" content="https://yangocean-sudo.github.io/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/index.html">
 <meta property="og:site_name" content="YangOcean">
 <meta property="og:description" content="本篇讲述了在游戏开始时的角色是如何生成的，以及基地爆炸动画的触发和设置">
 <meta property="og:locale" content="en_US">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/">
+<link rel="canonical" href="https://yangocean-sudo.github.io/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/">
 
 
 <script class="page-configurations">
@@ -151,7 +151,7 @@
         <li class="menu-item menu-item-tags"><a href="/en/tags/" rel="section"><i class="tags fa-fw"></i>Tags</a></li>
         <li class="menu-item menu-item-categories"><a href="/en/categories/" rel="section"><i class="th fa-fw"></i>Categories</a></li>
         <li class="menu-item menu-item-archives"><a href="/en/archives/" rel="section"><i class="archive fa-fw"></i>Archives</a></li>
-        <li class="menu-item menu-item-switch_lang"><a href="https://yangocean-sudo.github.io/" rel="noopener" target="_blank"><i class="language fa-fw"></i>简体中文</a></li>
+        <li class="menu-item menu-item-switch_lang"><a href="https://yangocean-sudo.github.io/" rel="section"><i class="language fa-fw"></i>简体中文</a></li>
   </ul>
 </nav>
 
@@ -249,7 +249,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/">
+    <link itemprop="mainEntityOfPage" href="https://yangocean-sudo.github.io/en/2021/03/23/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%94%E5%A4%A9%EF%BC%9A%E7%8E%A9%E5%AE%B6%E4%B8%8E%E6%95%8C%E4%BA%BA%E7%9A%84%E7%94%9F%E6%88%90%EF%BC%8C%E5%9F%BA%E5%9C%B0%E7%88%86%E7%82%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/en/uploads/selfie2.jpg">
