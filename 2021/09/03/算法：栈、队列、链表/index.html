@@ -23,17 +23,17 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yangocean-sudo.github.io","root":"/en/","images":"/en/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="本篇讲述了三种data structure的特点">
+<meta name="description" content="This article describes the characteristics of the three data structures">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法：栈、队列、链表">
+<meta property="og:title" content="Algorithms: stacks, queues, linked lists">
 <meta property="og:url" content="https://yangocean-sudo.github.io/en/2021/09/03/%E7%AE%97%E6%B3%95%EF%BC%9A%E6%A0%88%E3%80%81%E9%98%9F%E5%88%97%E3%80%81%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="YangOcean">
-<meta property="og:description" content="本篇讲述了三种data structure的特点">
+<meta property="og:description" content="This article describes the characteristics of the three data structures">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-03T13:33:47.000Z">
-<meta property="article:modified_time" content="2022-03-09T00:57:28.401Z">
+<meta property="article:modified_time" content="2022-04-06T22:48:31.025Z">
 <meta property="article:author" content="Yangyang Cui">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="algorithm">
 <meta name="twitter:card" content="summary">
 
 
@@ -69,7 +69,7 @@
           return false;
       }
   }
-</script><title>算法：栈、队列、链表 | YangOcean</title>
+</script><title>Algorithms: stacks, queues, linked lists | YangOcean</title>
   
 
 
@@ -182,7 +182,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%9F%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">2.</span> <span class="nav-text">栈</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#queue"><span class="nav-number">1.</span> <span class="nav-text">queue</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#stack"><span class="nav-number">2.</span> <span class="nav-text">stack</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -262,7 +262,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          算法：栈、队列、链表
+          Algorithms: stacks, queues, linked lists
         </h1>
 
         <div class="post-meta-container">
@@ -280,7 +280,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-03-09 00:57:28" itemprop="dateModified" datetime="2022-03-09T00:57:28+00:00">2022-03-09</time>
+        <time title="Modified: 2022-04-06 23:48:31" itemprop="dateModified" datetime="2022-04-06T23:48:31+01:00">2022-04-06</time>
       </span>
 
   
@@ -309,27 +309,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本篇讲述了三种data structure的特点</p>
+        <p>This article describes the characteristics of the three data structures</p>
 <a id="more"></a>
-<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>一串加密后的QQ号是：631758924, 他的解密方法如下：将第一个数删除，将第二个数放到末尾，再将第三个数删除，第四个数放到末尾…到最后删除的数字连在一起就是解密后的结果<br>用Python实现解密过程：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">list_input = []</span><br><span class="line"><span class="comment"># 输入</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    number = <span class="built_in">input</span>(<span class="string">&quot;give me number to input:\n&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> number == <span class="string">&#x27;done&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    list_input.append(number)</span><br><span class="line"><span class="comment"># 被删除的数字</span></span><br><span class="line">delete = []</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(list_input) != <span class="number">1</span>:</span><br><span class="line">        delete.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">        list_input.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        delete.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(delete)</span><br></pre></td></tr></table></figure>
-<p>最后输出的结果为：615947283</p>
-<p>而书本上用C则更麻烦一点，先初始化一个数组<code>int q[101]</code>， 之后在输入的数字前加入数字0，将第一个数字设为head，队尾数字的后一个位置设置为tail。</p>
+<h1 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h1><p>A string of encrypted QQ numbers is: 631758924. His decryption method is as follows: delete the first number, put the second number at the end, delete the third number, and put the fourth number at the end.. .To the last deleted numbers are connected together is the result after decryption<br>Implement the decryption process in Python:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">list_input = []</span><br><span class="line"><span class="comment"># input</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    number = <span class="built_in">input</span>(<span class="string">&quot;give me number to input:\n&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> number == <span class="string">&#x27;done&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    list_input.append(number)</span><br><span class="line"><span class="comment"># deleted numbers</span></span><br><span class="line">delete = []</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(list_input) != <span class="number">1</span>:</span><br><span class="line">        delete.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">        list_input.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        delete.append(list_input[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">del</span> list_input[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(delete)</span><br></pre></td></tr></table></figure>
+<p>The final output is: 615947283</p>
+<p>It is more troublesome to use C in the book. First initialize an array <code>int q[101]</code>, then add the number 0 before the input number, set the first number as head, and set the last position of the number at the end of the queue as tail.</p>
 <blockquote>
-<p>如果把tail设置为队尾时，当队列中只剩下一个元素的时候，head与tail重合会带来一些麻烦。这里规定队首和队尾重合时，队列为空。</p>
+<p>If the tail is set as the tail of the queue, when there is only one element left in the queue, the coincidence of the head and the tail will bring some trouble. Here it is stipulated that when the head of the team and the tail of the team coincide, the queue is empty.</p>
 </blockquote>
-<p>删除一个数：head++；新增加一个数：把需要增加的数放到q[tail],然后tail++。</p>
+<p>Delete a number: head++; add a new number: put the number to be added into q[tail], then tail++.</p>
 <blockquote>
-<p>在这个队列当中，新来的人总是站在队列的最后面，来的越早的人越靠前，也就越早能买到票，就是先来的人先服务，我们称之为“先进先出”(First In First Out)原则。</p>
+<p>In this queue, the newcomers always stand at the back of the queue, the earlier the people who come, the earlier they can buy tickets, that is, the people who come first serve first, we call it “First In First Out” principle.</p>
 </blockquote>
-<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><blockquote>
-<p>‘xyzyx’是一个回文字符串，所谓回文字符串就是指正读反读均相同的字符序列。通过栈这个数据结构我们很容易判断一个字符串是否是回文。</p>
+<h1 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h1><blockquote>
+<p>‘xyzyx’ is a palindrome string, the so-called palindrome string refers to the same sequence of characters in both forward and reverse reading. Through the data structure of the stack, we can easily determine whether a string is a palindrome.</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">list_input = []</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    number = <span class="built_in">input</span>(<span class="string">&quot;give me number to input:\n&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> number == <span class="string">&#x27;done&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    list_input.append(number)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果长度是3，mid_point则为1</span></span><br><span class="line">mid_point = <span class="built_in">int</span>(<span class="built_in">len</span>(list_input)/<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,mid_point):</span><br><span class="line">    <span class="keyword">if</span> list_input[i] != list_input[<span class="built_in">len</span>(list_input)-<span class="number">1</span>-i]:</span><br><span class="line">        print(<span class="string">&quot;Not a palindrome&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> i == mid_point-<span class="number">1</span>:</span><br><span class="line">        print(<span class="string">&quot;A palindrome&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>在书本中，为了突出栈的特点，即后进后出（比如吃薯片时，要想吃掉最后一片，必须把全面的全部吃完），作者创建了一个字符数组来当作栈，再将测试的回文中的前一半存入栈中：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">list_input = []</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    number = <span class="built_in">input</span>(<span class="string">&quot;give me number to input:\n&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> number == <span class="string">&#x27;done&#x27;</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    list_input.append(number)</span><br><span class="line"></span><br><span class="line"><span class="comment"># If length is 3, mid_point is 1</span></span><br><span class="line">mid_point = <span class="built_in">int</span>(<span class="built_in">len</span>(list_input)/<span class="number">2</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,mid_point):</span><br><span class="line">    <span class="keyword">if</span> list_input[i] != list_input[<span class="built_in">len</span>(list_input)-<span class="number">1</span>-i]:</span><br><span class="line">        print(<span class="string">&quot;Not a palindrome&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">elif</span> i == mid_point-<span class="number">1</span>:</span><br><span class="line">        print(<span class="string">&quot;A palindrome&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>In the book, in order to highlight the characteristics of the stack, that is, last in and then out (for example, when eating potato chips, if you want to eat the last slice, you must eat all of them), the author created a character array as a stack, and then put The first half of the test’s palindrome is placed on the stack:</p>
 <blockquote>
- <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">top = <span class="number">0</span>; <span class="comment">//栈的初始化</span></span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=mid;i++)</span><br><span class="line">&#123;</span><br><span class="line">  s[++top] = a[i];</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">随后再将后一半的字符与栈中的字符一一进行比对：</span><br><span class="line"> ```C</span><br><span class="line"><span class="keyword">for</span>(i=next;i&lt;=len<span class="number">-1</span>;i++&gt;)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">if</span>(a[i] != s[top])</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  top--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>因为一开始每入栈一个字符top就会加一，所以中间字符的左边，即s[top]，不出意外地会与中间字符的右边a[i]呈现出一样的字符。一旦top=0，则意味着栈中所有的字符都已经输出完毕，测试的字符确实是回文。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">top = <span class="number">0</span>; <span class="comment">//Initialization of stack</span></span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;=mid;i++)</span><br><span class="line">&#123;</span><br><span class="line">s[++top] = a[i];</span><br><span class="line">&#125;```</span><br><span class="line"></span><br><span class="line">Then compare the second half of the characters with the characters in the <span class="built_in">stack</span> one by one:</span><br><span class="line">````C</span><br><span class="line"><span class="keyword">for</span>(i=next;i&lt;=len<span class="number">-1</span>;i++&gt;)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(a[i] != s[top])</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">top--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Because top is incremented by one each time a character is pushed into the stack at the beginning, the left side of the middle character, s[top], will not unexpectedly present the same character as a[i] on the right side of the middle character. Once top=0, it means that all characters in the stack have been output, and the tested character is indeed a palindrome.</p>
 </blockquote>
 
     </div>
@@ -340,15 +340,15 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/en/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/en/tags/algorithm/" rel="tag"># algorithm</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/en/2021/08/29/%E6%88%91%E7%88%AC%E5%8F%96%E4%BA%86B%E7%AB%991000%E9%83%A8%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%8C%E5%8F%91%E7%8E%B0%E8%A7%82%E4%BC%97%E8%80%81%E7%88%B7%E7%88%B1%E7%9C%8B%E8%BF%99%E4%BA%9B%E7%89%87/" rel="prev" title="我爬取了B站1000部影视资源，发现观众老爷爱看这些片">
-                  <i class="fa fa-chevron-left"></i> 我爬取了B站1000部影视资源，发现观众老爷爱看这些片
+                <a href="/en/2021/08/29/%E6%88%91%E7%88%AC%E5%8F%96%E4%BA%86B%E7%AB%991000%E9%83%A8%E5%BD%B1%E8%A7%86%E8%B5%84%E6%BA%90%EF%BC%8C%E5%8F%91%E7%8E%B0%E8%A7%82%E4%BC%97%E8%80%81%E7%88%B7%E7%88%B1%E7%9C%8B%E8%BF%99%E4%BA%9B%E7%89%87/" rel="prev" title="I crawled 1000 film and television resources of station B, and found that the audience loves to watch these films">
+                  <i class="fa fa-chevron-left"></i> I crawled 1000 film and television resources of station B, and found that the audience loves to watch these films
                 </a>
             </div>
             <div class="post-nav-item">

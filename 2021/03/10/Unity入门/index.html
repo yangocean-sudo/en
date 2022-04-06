@@ -23,17 +23,17 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"yangocean-sudo.github.io","root":"/en/","images":"/en/images","scheme":"Pisces","version":"8.2.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="这是我学习Unity的第一天，是跟着Siki学院的坦克大战教程总结了一些经验。 这篇文章讲述了Unity界面和角色移动。">
+<meta name="description" content="This is my first day of learning Unity, and I summed up some experience with the tank battle tutorial of Siki Academy. This article talks about the Unity interface and character movement.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity入门第一天： 熟悉界面与物体移动">
+<meta property="og:title" content="The first day of getting started with Unity. Familiar with the interface and object movement">
 <meta property="og:url" content="https://yangocean-sudo.github.io/en/2021/03/10/Unity%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="YangOcean">
-<meta property="og:description" content="这是我学习Unity的第一天，是跟着Siki学院的坦克大战教程总结了一些经验。 这篇文章讲述了Unity界面和角色移动。">
+<meta property="og:description" content="This is my first day of learning Unity, and I summed up some experience with the tank battle tutorial of Siki Academy. This article talks about the Unity interface and character movement.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yangocean-sudo.github.io/images/Project_and_Hierarchy.png">
 <meta property="og:image" content="https://yangocean-sudo.github.io/images/scene.png">
 <meta property="article:published_time" content="2021-03-10T23:18:01.000Z">
-<meta property="article:modified_time" content="2021-06-22T05:35:12.919Z">
+<meta property="article:modified_time" content="2022-04-06T22:48:01.408Z">
 <meta property="article:author" content="Yangyang Cui">
 <meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
@@ -72,7 +72,7 @@
           return false;
       }
   }
-</script><title>Unity入门第一天： 熟悉界面与物体移动 | YangOcean</title>
+</script><title>The first day of getting started with Unity. Familiar with the interface and object movement | YangOcean</title>
   
 
 
@@ -185,7 +185,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%95%8C%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">关于界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%92%E8%89%B2%E7%A7%BB%E5%8A%A8%E4%BB%A3%E7%A0%81%E8%A7%A3%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">角色移动代码解析</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-the-interface"><span class="nav-number">1.</span> <span class="nav-text">About the interface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-movement-code-analysis"><span class="nav-number">2.</span> <span class="nav-text">Character movement code analysis</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -265,7 +265,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Unity入门第一天： 熟悉界面与物体移动
+          The first day of getting started with Unity. Familiar with the interface and object movement
         </h1>
 
         <div class="post-meta-container">
@@ -283,7 +283,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-06-22 06:35:12" itemprop="dateModified" datetime="2021-06-22T06:35:12+01:00">2021-06-22</time>
+        <time title="Modified: 2022-04-06 23:48:01" itemprop="dateModified" datetime="2022-04-06T23:48:01+01:00">2022-04-06</time>
       </span>
 
   
@@ -312,37 +312,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>这是我学习Unity的第一天，是跟着Siki学院的坦克大战教程总结了一些经验。</p>
-<p>这篇文章讲述了Unity界面和角色移动。</p>
+        <p>This is my first day of learning Unity, and I summed up some experience with the tank battle tutorial of Siki Academy.</p>
+<p>This article talks about the Unity interface and character movement.</p>
 <a id="more"></a>
-<h2 id="关于界面"><a href="#关于界面" class="headerlink" title="关于界面"></a>关于界面</h2><ul>
-<li><code>project</code> 涉及了所有开发者所需要的美术模型（场景，道具，主体）， 制作好的动画可以打包放入一个命名为Animation文件夹里，动画控制器也可以放入一个命名为Animation Controller的文件夹里，场景角色的脚本设计可以放入Scripts里，Hierarchy中的场景可以放入Map文件夹里。<br><img src="/images/Project_and_Hierarchy.png"></li>
-<li>将project内的素材拖入到<code>Hierarchy</code>中，即代表这些素材都是可以在<code>scence</code>，即场景中使用的。通过调整xyz的值可以设置素材的大小<code>Scale X3 Y3 Z3</code>。<ul>
-<li>如果想要在多个素材中设置相同的（大小）值，可以复制粘贴第一个素材后，将需要更改的素材拖入<code>Sprite Renderer</code>的<code>Sprite</code>中。</li>
-<li>如果想要在<code>Hierarchy</code>里呈现<code>project</code>里多个素材组成的动画，<code>shift</code>多选素材，并拖入<code>Hierarchy</code>中，将其命名为动画的名称。</li>
+<h2 id="About-the-interface"><a href="#About-the-interface" class="headerlink" title="About the interface"></a>About the interface</h2><ul>
+<li><code>project</code> involves all the art models (scene, props, main body) required by developers. The produced animation can be packaged and placed in a folder named Animation, and the animation controller can also be placed in a folder named Animation Controller In the folder of the scene character, the script design of the scene character can be placed in the Scripts, and the scene in the Hierarchy can be placed in the Map folder.<br><img src="/images/Project_and_Hierarchy.png"></li>
+<li>Drag and drop the materials in the project into the <code>Hierarchy</code>, which means that these materials can be used in the <code>scence</code>, that is, the scene. The size of the material can be set by adjusting the value of xyz <code>Scale X3 Y3 Z3</code>.<ul>
+<li>If you want to set the same (size) value in multiple clips, you can copy and paste the first clip and drag the clip you want to change into the <code>Sprite</code> of the <code>Sprite Renderer</code>.</li>
+<li>If you want to render an animation composed of multiple materials in <code>project</code> in <code>Hierarchy</code>, <code>shift</code> select multiple materials, drag them into <code>Hierarchy</code>, and name it the name of the animation.</li>
 </ul>
 </li>
-<li><code>Scene</code>是游戏中会出现素材的呈现，可以用鼠标自由拖拽所选的素材，右键移动整体镜头。</li>
+<li><code>Scene</code> is the presentation of the material in the game. You can freely drag the selected material with the mouse, and right-click to move the overall camera.</li>
 <li><blockquote>
-<p>当想要设置物体为1m而又不知道如何调整素材大小的时候, 在Hierarchy中右键 -&gt; 3D Object -&gt; Cube， 即可得到一个变长为1m * 1m * 1m的正方体。<br><img src="/images/scene.png"></p>
+<p>When you want to set the object to 1m and don’t know how to adjust the size of the material, right click in Hierarchy -&gt; 3D Object -&gt; Cube, you can get a cube with a length of 1m * 1m * 1m.<br><img src="/images/scene.png"></p>
 </blockquote>
 </li>
-<li><code>Game</code> 显示了按下播放键 ▶️ 后会呈现的结果（动画，人物控制）。</li>
+<li><code>Game</code> shows the result (animation, character control) that will be rendered after pressing the play key ▶️.</li>
 </ul>
 <hr>
-<h2 id="角色移动代码解析"><a href="#角色移动代码解析" class="headerlink" title="角色移动代码解析"></a>角色移动代码解析</h2><pre><code>using System.Collections;
+<h2 id="Character-movement-code-analysis"><a href="#Character-movement-code-analysis" class="headerlink" title="Character movement code analysis"></a>Character movement code analysis</h2><pre><code>using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
-&#123;   
-    public float moveSpeed = 3;//设定角色移动速度：3m
-    //Sprite Renderer用来在Scene中渲染显示出图像，缩写成sr
-    private SpriteRenderer sr; 
-    //上 右 下 左，不同方向的图片用不同序列[]表示
+&#123;
+    public float moveSpeed ​​= 3;//Set the character movement speed: 3m
+    //Sprite Renderer is used to render and display images in Scene, abbreviated as sr
+    private SpriteRenderer sr;
+    //Up right down left, pictures in different directions are represented by different sequences []
     public Sprite[] tankSprite;
 
-    //Awake在脚本被实例化的时候就会被调用（不管脚本是不是enable的）
+    //Awake will be called when the script is instantiated (regardless of whether the script is enabled or not)
     private void Awake()&#123;
         sr = GetComponent&lt;SpriteRenderer&gt;();
     &#125;
@@ -354,23 +354,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     &#123;
-        //&quot;Horizontal&quot;不能拼错，否则会识别不出。
-        //识别键盘
+        //&quot;Horizontal&quot; cannot be misspelled, otherwise it will not be recognized.
+        //identify the keyboard
         float h = Input.GetAxisRaw(&quot;Horizontal&quot;);
-        //transform用来控制对象的位置,right是横向
-        //Time.delatTime代表完成上一帧所用的时间（以秒为单位）
-        //使用它可通过世界坐标对 GameObject 应用变换。这意味着 GameObject 的变换是通过世界空间而不是 GameObject 的本地空间改变的
-        transform.Translate(Vector3.right * h * moveSpeed *Time.deltaTime, Space.World);
-        //如果是左边h的值是-1，右边是1，可以判断什么时候坦克转向
+        //transform is used to control the position of the object, right is horizontal
+        //Time.delatTime represents the time (in seconds) it took to complete the previous frame
+        //Use this to apply a transformation to the GameObject via world coordinates. This means that the GameObject&#39;s transform is changed through world space instead of the GameObject&#39;s local space
+        transform.Translate(Vector3.right * h * moveSpeed ​​*Time.deltaTime, Space.World);
+        //If the value of h on the left is -1 and the value on the right is 1, you can judge when the tank turns
         if (h &lt; 0)&#123;
             sr.sprite = tankSprite[3];
         &#125;
         else if (h &gt; 0)&#123;
             sr.sprite = tankSprite[1];
         &#125;
-        //v大于1的时候向上走，反之向下走
+        //When v is greater than 1, go up, otherwise go down
         float v = Input.GetAxisRaw(&quot;Vertical&quot;);
-        transform.Translate(Vector3.up * v * moveSpeed * Time.deltaTime, Space.World);
+        transform.Translate(Vector3.up * v * moveSpeed ​​* Time.deltaTime, Space.World);
         if (v &lt; 0)&#123;
             sr.sprite = tankSprite[2];
         &#125;
@@ -398,8 +398,8 @@ public class Player : MonoBehaviour
             <div class="post-nav-item">
             </div>
             <div class="post-nav-item">
-                <a href="/en/2021/03/13/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9A%E7%A7%BB%E5%8A%A8%EF%BC%8C%E7%A2%B0%E6%92%9E%E4%B8%8E%E6%B8%B2%E6%9F%93/" rel="next" title="Unity入门第二天：移动，碰撞与渲染">
-                  Unity入门第二天：移动，碰撞与渲染 <i class="fa fa-chevron-right"></i>
+                <a href="/en/2021/03/13/Unity%E5%85%A5%E9%97%A8%E7%AC%AC%E4%BA%8C%E5%A4%A9%EF%BC%9A%E7%A7%BB%E5%8A%A8%EF%BC%8C%E7%A2%B0%E6%92%9E%E4%B8%8E%E6%B8%B2%E6%9F%93/" rel="next" title="Getting Started with Unity Day 2: Movement, Collision and Rendering">
+                  Getting Started with Unity Day 2: Movement, Collision and Rendering <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
